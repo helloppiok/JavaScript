@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            position:absolute;
+            /* left: 0;
+            top : 0; */
+        }
+        html, body { height: 100%; margin: 0px; }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <!-- 트랜지션1.html -->
+
+    <script>
+
+        let icon;
+        let zindex = 1;
+
+        window.onmousedown = function() {
+            
+            // alert(event.clientX);
+            icon = document.createElement('img');
+
+            icon.setAttribute('class', 'item');
+            icon.setAttribute('src', '../images/m01.png');
+
+            icon.style.left = event.clientX - 64 + 'px';
+            icon.style.top = event.clientY - 64 + 'px';
+
+            document.body.appendChild(icon);
+
+            event.stopPropagation();
+            return false;
+
+        };
+
+    </script>
+
+
+</body>
+</html>
